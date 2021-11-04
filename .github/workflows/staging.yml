@@ -7,17 +7,21 @@ jobs:
   deploy-2-stg:
     runs-on: ubuntu-latest
     steps:
-    - name: Add SSH key
-      uses: shimataro/ssh-key-action@v2
-      with:
-        key: ${{ secrets.SSH_PRIVATE_KEY }} 
-        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+    - uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: build
+##    - name: Add SSH key
+#      uses: shimataro/ssh-key-action@v2
+#      with:
+#        key: ${{ secrets.SSH_PRIVATE_KEY }} 
+#        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
     - name: Deploy with rsync
 #      run: ls -l && rsync -e "ssh -o StrictHostKeyChecking=no" -avz src/ deploy@18.222.230.190:/home/deploy/stg/
       uses: burnett01/rsync-deployments@5.1
       with:
         switches: -avzr --delete
-        #path: ./
+        path: build/
         remote_path: /home/deploy/stg
         remote_host: 18.222.230.190
         remote_user: deploy

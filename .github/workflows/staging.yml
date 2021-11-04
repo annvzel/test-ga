@@ -1,4 +1,4 @@
-yname: deploy-to-stg-test
+name: deploy-to-stg-test
 on:
   push:
     branches: [ main ]

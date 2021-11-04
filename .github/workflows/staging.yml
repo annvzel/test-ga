@@ -7,10 +7,7 @@ jobs:
   deploy-2-stg:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/download-artifact@v2
-      with:
-        name: build
-        path: build
+      - uses: actions/checkout@v1
 ##    - name: Add SSH key
 #      uses: shimataro/ssh-key-action@v2
 #      with:

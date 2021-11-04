@@ -1,0 +1,50 @@
+.textField {
+  font-weight: 400;
+  font-size: 18px;
+  color: #444448;
+  line-height: 32px;
+}
+
+.textSmall {
+  font-size: 14px;
+}
+
+.textSmall2 {
+  margin-left: -15px;
+}
+
+.textCard {
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 8px;
+}
+
+.textOnImage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  line-height: 36px;
+  color: #000000;
+  font-weight: 600;
+  transform: translate(-36%, -50%);
+  font-size: 24px;
+}
+
+.textLink {
+  color: #43BBFF;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-right: 9px;
+}
+
+.textField2 {
+  color:  #000000;
+}
+
+.textFooter {
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(217, 219, 225, 1);
+  width: 55%;
+}

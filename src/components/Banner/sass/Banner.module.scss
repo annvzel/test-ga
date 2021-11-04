@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  max-width: 1140px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.textContainer {
+  width: 540px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.title {
+  line-height: 130%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+
+.textWrapper {
+  margin-top: 8px;
+}

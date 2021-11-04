@@ -1,0 +1,17 @@
+.wrapperBanner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  margin-top: 32px;
+  margin-left: 15px;
+  a {
+    text-decoration: none;
+    color: rgba(67, 187, 255, 1);
+  }
+}
+
+

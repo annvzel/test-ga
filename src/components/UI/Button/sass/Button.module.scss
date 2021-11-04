@@ -1,0 +1,27 @@
+.button {
+  width: 136px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.buttonHeader {
+  color: #43BBFF;
+  backdrop-filter: blur(4px);
+  border-color: #FFFFFF66;
+}
+
+.buttonBanner {
+  width: 300px;
+  height: 52px;
+  background: #43BBFF;
+  margin-top: 32px;
+  border-color: #43BBFF;
+  color: #FFFFFF;
+  display: block;
+}
+

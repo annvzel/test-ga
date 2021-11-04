@@ -1,0 +1,47 @@
+.arrow1 {
+  cursor: pointer;
+  position: relative;
+  height: 7px;
+  display: inline-block;
+}
+.arrow1 div {
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background-color: #43BBFF;
+  left:0;
+}
+.arrow1 div::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  top: -2px;
+  right: -2px;
+  background-color: #43BBFF;
+  transform: rotate(50deg);
+}
+.arrow1 div::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  top: 2px;
+  right: -2px;
+  background-color: #43BBFF;
+  transform: rotate(-50deg);
+}
+.arrow1:hover {
+  animation: arrow1 1s linear infinite;
+}
+@keyframes arrow1 {
+  0% {
+    left:0;
+  }
+  50% {
+    left:10px;
+  }
+  100% {
+    left:0;
+  }
+}

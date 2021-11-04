@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
+      with:
+        name: build
+        path: build
 ##    - name: Add SSH key
 #      uses: shimataro/ssh-key-action@v2
 #      with:

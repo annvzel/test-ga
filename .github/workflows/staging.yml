@@ -33,4 +33,4 @@ jobs:
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Bring up the server
-        run: ssh staging 'cd /home/deployment; docker-compose up -d --force --build'
+        run: ssh staging 'cd /home/deploy/stg; docker-compose up -d --force --build'

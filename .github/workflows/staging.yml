@@ -13,13 +13,13 @@ jobs:
 #      with:
 #        key: ${{ secrets.SSH_PRIVATE_KEY }} 
 #        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-    - name: Deploy with rsync
+      - name: Deploy with rsync
 #      run: ls -l && rsync -e "ssh -o StrictHostKeyChecking=no" -avz src/ deploy@18.222.230.190:/home/deploy/stg/
-      uses: burnett01/rsync-deployments@5.1
-      with:
-        switches: -avzr --delete
-        path: build/
-        remote_path: /home/deploy/stg
-        remote_host: 18.222.230.190
-        remote_user: deploy
-        remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        uses: burnett01/rsync-deployments@5.1
+        with:
+          switches: -avzr --delete
+          path: ./
+          remote_path: /home/deploy/stg
+          remote_host: 18.222.230.190
+          remote_user: deploy
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}

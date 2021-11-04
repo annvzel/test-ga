@@ -1,4 +1,4 @@
-name: deploy-to-stg-test
+yname: deploy-to-stg-test
 on:
   push:
     branches: [ main ]
@@ -8,13 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-##    - name: Add SSH key
-#      uses: shimataro/ssh-key-action@v2
-#      with:
-#        key: ${{ secrets.SSH_PRIVATE_KEY }} 
-#        known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName 18.222.230.190
+            User deploy
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Deploy with rsync
-#      run: ls -l && rsync -e "ssh -o StrictHostKeyChecking=no" -avz src/ deploy@18.222.230.190:/home/deploy/stg/
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avzr --delete
@@ -23,3 +31,6 @@ jobs:
           remote_host: 18.222.230.190
           remote_user: deploy
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Bring up the server
+        run: ssh staging 'cd /home/deployment; docker-compose up -d --force --build'

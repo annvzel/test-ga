@@ -17,7 +17,7 @@ jobs:
       uses: burnett01/rsync-deployments@5.1
       with:
         switches: -avzr --delete
-        path: workspace/
+        path: ./
         remote_path: /home/deploy/stg
         remote_host: 18.222.230.190
         remote_user: deploy

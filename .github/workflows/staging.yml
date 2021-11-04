@@ -27,7 +27,7 @@ jobs:
       - name: Deploy with rsync
         uses: burnett01/rsync-deployments@5.1
         with:
-          switches: -avzr --delete
+          switches: -avzr --exclude='node_modules/'
           path: ./
           remote_path: /home/deploy/stg
           remote_host: 18.222.230.190

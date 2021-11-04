@@ -13,4 +13,4 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }} 
         known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
     - name: Deploy with rsync
-      run: rsync -e "ssh -o StrictHostKeyChecking=no" -avz src/ deploy@18.222.230.190:/home/deploy/stg/
+      run: ls -l && rsync -e "ssh -o StrictHostKeyChecking=no" -avz src/ deploy@18.222.230.190:/home/deploy/stg/
